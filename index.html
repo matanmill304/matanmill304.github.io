@@ -17,10 +17,10 @@
      comment was written.
      ═══════════════════════════════════════════════════════════════════════ -->
 
-<title>Matan Millionshik</title>
-<meta name="description" content="Signal processing and machine learning at the Technion; products that turn messy real-world data into numbers you can trust.">
-<meta property="og:title" content="Matan Millionshik">
-<meta property="og:description" content="From audio forensics at the Technion to products built against my own bank feed.">
+<title>Matan Millionschik</title>
+<meta name="description" content="Matan Millionschik — founder, engineer and product manager. Projects in AI, machine learning, and apps built for real use.">
+<meta property="og:title" content="Matan Millionschik">
+<meta property="og:description" content="Founder, engineer and product manager. A few things I have built.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://matanmill304.github.io/">
 
@@ -31,7 +31,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- FONT — to swap, change this one line and the --sans value below. See EDITING.md §4. -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 
 <style>
 :root{
@@ -77,8 +77,8 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--ship);outline-offs
 .id-text{flex:1;min-width:260px}
 h1{font-size:clamp(31px,5.6vw,42px);font-weight:600;letter-spacing:-.028em;line-height:1.08;
   margin:0;text-wrap:balance}
-.role{font-size:17px;color:var(--ink-2);margin:7px 0 0;max-width:54ch}
-.role b{color:var(--ink);font-weight:500}
+.role{font-size:18px;font-weight:500;color:var(--ink);margin:6px 0 0;letter-spacing:-.005em}
+.bio{font-size:16px;color:var(--ink-2);margin:8px 0 0;max-width:56ch;line-height:1.55}
 .where{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;
   color:var(--ink-3);margin:11px 0 0}
 
@@ -92,71 +92,61 @@ h1{font-size:clamp(31px,5.6vw,42px);font-weight:600;letter-spacing:-.028em;line-
 .links a:hover{border-color:var(--ink-3);color:var(--ink)}
 .links svg{width:14px;height:14px;fill:currentColor;flex:none}
 
-.intro{
-  margin:34px 0 0;padding:22px 0 0;border-top:1px solid var(--rule);
-  font-size:17.5px;line-height:1.6;color:var(--ink-2);max-width:66ch;
-}
-.intro em{font-style:normal;color:var(--ink);font-weight:500}
 
 /* ── sections ─────────────────────────────────────────── */
-section{padding:56px 0 0}
-.sec-head{display:flex;align-items:baseline;gap:16px;margin:0 0 4px}
-.sec-head h2{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--ink-3);margin:0;white-space:nowrap}
+section{padding:36px 0 0}
+.sec-head{display:flex;align-items:center;gap:16px;margin:0 0 4px}
+.sec-head h2{font-family:var(--mono);font-size:15px;font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--ink);margin:0;white-space:nowrap}
 .sec-head .fill{flex:1;height:1px;background:var(--rule)}
-.sec-note{font-size:14.5px;color:var(--ink-3);margin:0 0 10px;max-width:60ch}
+.sec-note{font-size:14.5px;color:var(--ink-3);margin:0 0 10px;text-align:center}
 
-/* ── a project: a summary you scan, detail you open ───── */
+/* ── a project: thumbnail + summary you scan, detail you open ─ */
 .proj{border-bottom:1px solid var(--rule-2)}
 .proj:last-of-type{border-bottom:0}
 .proj>summary{
-  list-style:none;cursor:pointer;padding:20px 0;display:grid;
-  grid-template-columns:1fr auto;gap:4px 14px;align-items:baseline;
+  list-style:none;cursor:pointer;padding:22px 0;
+  display:grid;grid-template-columns:152px minmax(0,1fr) auto;gap:20px;align-items:center;
 }
 .proj>summary::-webkit-details-marker{display:none}
+/* Every row the same height, whether its summary wraps to one line or two — otherwise the
+   thumbnails sit on an uneven rhythm down the list. */
+@media (min-width:561px){.proj>summary{min-height:150px}}
 .proj>summary:hover .p-name{color:var(--ship)}
-.p-name{font-size:19.5px;font-weight:600;letter-spacing:-.016em;transition:color .15s;
-  display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
-.p-name .chev{
-  font-family:var(--mono);font-size:13px;color:var(--ink-3);font-weight:400;
-  transition:transform .18s ease;display:inline-block;
-}
-.proj[open] .p-name .chev{transform:rotate(90deg)}
-.p-meta{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);white-space:nowrap;
-  text-align:end;align-self:baseline}
-.p-sum{grid-column:1/-1;font-size:15.5px;color:var(--ink-2);max-width:70ch;margin:2px 0 0}
-.tag{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
-  padding:3px 8px;border-radius:3px;white-space:nowrap;font-weight:500}
-.tag.ship{color:var(--ship);background:var(--ship-bg)}
-.tag.res{color:var(--research);background:var(--research-bg)}
+.thumb{display:block;width:152px;aspect-ratio:16/10;object-fit:cover;border-radius:7px;
+  border:1px solid var(--rule);background:var(--surface)}
+.p-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.p-name{font-size:18.5px;font-weight:600;letter-spacing:-.014em;transition:color .15s}
+.p-sum{font-size:14.5px;color:var(--ink-2);margin-top:3px;max-width:62ch}
+.p-meta{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin-top:5px}
+.chev{font-family:var(--mono);font-size:13px;color:var(--ink-3);display:inline-block;
+  transition:transform .18s ease}
+.proj[open] .chev{transform:rotate(90deg)}
 
-.p-body{padding:0 0 26px;max-width:72ch}
-.p-body>p{margin:0 0 14px;color:var(--ink-2)}
-.p-body>p:first-child{margin-top:2px}
+
+.p-body{padding:0 0 30px 172px}
+.p-body>p{margin:0 0 14px;color:var(--ink-2);max-width:66ch}
 .p-body strong{color:var(--ink);font-weight:500}
-.p-body code{font-family:var(--mono);font-size:.88em;color:var(--ink)}
-
-.hard{margin:0 0 16px;padding:0;list-style:none;display:grid;gap:10px}
-.hard li{position:relative;padding-inline-start:19px;font-size:15px;color:var(--ink-2)}
-.hard li::before{content:"";position:absolute;inset-inline-start:2px;top:.62em;
+.feat{margin:4px 0 18px;padding:0;list-style:none;display:grid;gap:8px;max-width:64ch}
+.feat li{position:relative;padding-inline-start:19px;font-size:15px;color:var(--ink-2)}
+.feat li::before{content:"";position:absolute;inset-inline-start:2px;top:.66em;
   width:7px;height:1px;background:var(--ink-3)}
-.hard b{color:var(--ink);font-weight:500}
-
-.figs{display:flex;flex-wrap:wrap;margin:0 0 16px;border:1px solid var(--rule);
-  border-radius:6px;overflow:hidden;background:var(--surface)}
-.fig{flex:1 1 120px;padding:12px 15px;border-inline-start:1px solid var(--rule)}
-.fig:first-child{border-inline-start:0}
-.fig .n{font-family:var(--mono);font-size:18px;letter-spacing:-.02em;display:block}
-.fig .k{font-size:11.5px;color:var(--ink-3);display:block;margin-top:1px}
-
-.note{margin:0 0 16px;padding:13px 16px;border:1px solid var(--rule);border-radius:6px;
-  background:var(--surface);font-size:14px;color:var(--ink-2)}
-.note b{color:var(--ink);font-weight:500}
-
-.go{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:12.5px;
-  text-decoration:none;color:var(--ship);border-bottom:1px solid transparent;padding-bottom:1px}
-.go:hover{border-bottom-color:var(--ship)}
-.go+.go{margin-inline-start:18px}
+/* Project links. Named p-links, NOT links: the header's contact list is .links, and sharing the
+   name let these rules leak into those buttons — teal text, wider gaps, and a collapsed bottom
+   padding that made them look cut off. */
+.p-links{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}
+.p-links a{display:inline-flex;align-items:center;gap:7px;height:34px;padding:0 14px;
+  font-family:var(--mono);font-size:12.5px;text-decoration:none;color:var(--ink-2);
+  border:1px solid var(--rule);border-radius:999px;background:var(--surface);
+  transition:border-color .15s,color .15s}
+.p-links a:hover{border-color:var(--ink-3);color:var(--ink)}
+.p-links a.primary{color:var(--ship);border-color:color-mix(in srgb,var(--ship) 35%,var(--rule))}
+.p-links a.primary:hover{border-color:var(--ship)}
+.p-links svg{width:13px;height:13px;flex:none}
+.paused,.mob{font-size:13.5px;color:var(--ink-3);margin:0 0 12px;max-width:62ch}
+.mob{display:flex;align-items:baseline;gap:7px}
+.mob::before{content:"";flex:none;width:8px;height:12px;border:1.5px solid var(--ink-3);border-radius:2px;
+  transform:translateY(1px)}
 
 footer{padding:60px 0 56px;margin-top:56px;border-top:1px solid var(--rule)}
 footer p{font-family:var(--mono);font-size:12px;color:var(--ink-3);margin:0}
@@ -164,9 +154,10 @@ footer p{font-family:var(--mono);font-size:12px;color:var(--ink-3);margin:0}
 @media (max-width:560px){
   .wrap{padding:0 20px}
   .top{padding-top:40px}
-  section{padding-top:44px}
-  .proj>summary{grid-template-columns:1fr}
-  .p-meta{text-align:start}
+  section{padding-top:28px}
+  .proj>summary{grid-template-columns:104px minmax(0,1fr) auto;gap:14px;padding:18px 0}
+  .thumb{width:104px}
+  .p-body{padding-left:0}
   .avatar{width:64px;height:64px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
@@ -178,14 +169,12 @@ footer p{font-family:var(--mono);font-size:12px;color:var(--ink-3);margin:0}
 <!-- ═══ WHO I AM ═══ -->
 <header class="top">
   <div class="id">
-    <img class="avatar" src="me.jpg" alt="Matan Millionshik"
+    <img class="avatar" src="me.jpg" alt="Matan Millionschik"
          onerror="this.style.display='none'">
     <div class="id-text">
-      <h1>Matan Millionshik</h1>
-      <p class="role">
-        Signal processing and machine learning at the Technion, and <b>products I build and
-        actually run</b> on my own data.
-      </p>
+      <h1>Matan Millionschik</h1>
+      <p class="role">Founder, Engineer and Product Manager.</p>
+      <p class="bio">I work on things that help me and the people around me. Take a look, and feel free to reach out!</p>
       <p class="where">Tel Aviv · Israel</p>
     </div>
   </div>
@@ -202,206 +191,211 @@ footer p{font-family:var(--mono);font-size:12px;color:var(--ink-3);margin:0}
       <span id="mail-t">matanmill304 [at] gmail.com</span></a></li>
   </ul>
 
-  <p class="intro">
-    I work on the part where <em>messy real-world signals become numbers you can act on</em> —
-    identifying which generator produced a synthetic voice, cutting what a vision transformer costs
-    to run, and building apps that read my own bank feed and health data and refuse to report a
-    figure they cannot justify.
-  </p>
 </header>
 
 <!-- ═══ PROJECTS — order is simply the order of these blocks ═══ -->
 <section id="projects">
-  <div class="sec-head"><h2>Projects</h2><span class="fill"></span></div>
+  <div class="sec-head"><span class="fill"></span><h2>Projects</h2><span class="fill"></span></div>
   <p class="sec-note">Click any project to open it.</p>
 
-  <!-- PROJECT: Wallet -->
-  <details class="proj" open>
+  <!-- PROJECT: Personal Finance Agent -->
+  <details class="proj">
     <summary>
-      <span class="p-name"><span class="chev">▸</span> Wallet <span class="tag ship">Shipped</span></span>
-      <span class="p-meta">2026 — · React, TypeScript, Supabase</span>
-      <span class="p-sum">
-        A personal finance app for Israeli banking. Scrapes my bank and two card issuers nightly,
-        stores only raw rows, and derives every figure on the client — three years of history,
-        ~1,770 transactions, in Hebrew and right-to-left.
-      </span>
+      <img class="thumb" src="img/thumb-finance.png" alt="">
+      <div>
+        <div class="p-top"><span class="p-name">Personal Finance Agent</span></div>
+        <div class="p-sum">An AI agent over my own bank and card data — it tracks where my money goes and answers questions about it.</div>
+        <div class="p-meta">AI · TypeScript · React · Supabase</div>
+      </div>
+      <span class="chev">▸</span>
     </summary>
     <div class="p-body">
       <p>
-        The design rule is that the app stores <strong>nothing it computed</strong>. The scraper
-        pushes raw rows; categories, event tags and rent schedules live in separate tables owned by
-        the app; every total is derived at read time by pure functions. That split is what stops
-        tonight's scrape from clobbering a decision I made last week.
+        Israeli banks and credit cards don't give you one view of your money, and mainstream
+        budgeting apps either don't support them or depend on entering everything by hand. I built
+        this to see my finances clearly without doing any of that. Every night it pulls my bank and
+        card transactions automatically and turns them into a picture I can act on: spending by
+        month and category, savings, budgets, recurring costs, and one-off events like trips.
       </p>
-      <ul class="hard">
-        <li><b>Card bills double-count by construction.</b> The bank shows one lump debit, the
-          issuer shows the itemised purchases. Itemised scraping only became complete in Aug 2025,
-          so 25 earlier months had the bill removed with nothing in its place — ₪187,193 of history
-          invisible. Now each billing month counts its itemised rows plus the shortfall against
-          what was actually billed: exact for all 25 months, and it disables itself as coverage
-          improves.</li>
-        <li><b>The card silently started billing in dollars.</b> Foreign purchases were being
-          summed into shekel totals. The charged/original ratio recovers the rate the issuer used —
-          <code>3.5907</code>, against <code>3.592</code> derived by hand — and the rescaled cycle
-          reconciles to the bank's own figure within two agorot.</li>
-        <li><b>Rent is declared, not inferred.</b> The first version matched a payment by its exact
-          amount and spread it forward, which broke silently the moment the rent changed and filed
-          a third of each cheque into months the interface could not open. Now the obligation is a
-          versioned monthly cost and payments are matched to it, so cadence — quarterly, annual,
-          rotating between flatmates — cannot move a monthly figure.</li>
-        <li><b>An assistant with read-only tools.</b> Eight scoped tools over the ledger; answers
-          come back as typed blocks — a figure, a calculation, a chart — instead of markdown, so a
-          chart carries its query and the client re-runs it locally. Prompt and schema stay
-          server-side.</li>
+      <p>
+        It handles the details that usually make these numbers wrong — card bills that would
+        otherwise be counted twice, purchases charged in foreign currency, and rent paid on an
+        irregular schedule. On top of it sits an <strong>AI agent</strong>: I ask questions in plain
+        language, like how much I spend on food or how much I need to save to reach a goal, and it
+        answers from the actual transactions, with a chart when one helps.
+      </p>
+      <ul class="feat">
+        <li>Nightly sync from my bank and two credit cards — no manual entry</li>
+        <li>Spending, savings and budgets, by month and by category</li>
+        <li>An AI agent that answers questions from the real transactions, using read-only tools</li>
+        <li>Hebrew, right-to-left, built for the phone</li>
       </ul>
-      <div class="figs">
-        <div class="fig"><span class="n">~1,770</span><span class="k">transactions</span></div>
-        <div class="fig"><span class="n">3 yrs</span><span class="k">of history</span></div>
-        <div class="fig"><span class="n">₪187k</span><span class="k">history recovered</span></div>
-        <div class="fig"><span class="n">14</span><span class="k">isolated tables</span></div>
-      </div>
-      <div class="note">
-        <b>Want to try it?</b> There is a demo account with its own invented figures, isolated at
-        the database level so it cannot see or touch my real data. Email me and I will send the
-        link.
+      <p class="mob">Designed for the phone — best opened on mobile. On a desktop it shows as a narrow column.</p>
+      <div class="p-links">
+        <a class="primary" href="https://finance-app-psi-red.vercel.app/" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2.5h4.5V7M13.5 2.5 7 9M12 10v3a.5.5 0 0 1-.5.5h-8A.5.5 0 0 1 3 13V5a.5.5 0 0 1 .5-.5h3"/></svg>Open the app</a>
+        <a href="https://www.linkedin.com/in/matan-millionshik-0704761a9/" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true" fill="currentColor"><path d="M13.6 0H2.4A2.4 2.4 0 0 0 0 2.4v11.2A2.4 2.4 0 0 0 2.4 16h11.2a2.4 2.4 0 0 0 2.4-2.4V2.4A2.4 2.4 0 0 0 13.6 0ZM5 13H2.8V6H5v7ZM3.9 4.8a1.3 1.3 0 1 1 0-2.6 1.3 1.3 0 0 1 0 2.6ZM13.2 13H11V9.3c0-.9-.3-1.5-1.1-1.5-.7 0-1 .5-1.2.9-.1.2-.1.4-.1.7V13H6.4s.03-6.1 0-7h2.2v1c.3-.5.8-1.2 2-1.2 1.5 0 2.6 1 2.6 3.1V13Z"/></svg>Message me for demo access</a>
       </div>
     </div>
   </details>
 
-  <!-- PROJECT: Weight -->
+  <!-- PROJECT: Weight Tracking App -->
   <details class="proj">
     <summary>
-      <span class="p-name"><span class="chev">▸</span> Weight <span class="tag ship">Shipped</span></span>
-      <span class="p-meta">2026 — · React, TypeScript, Supabase</span>
-      <span class="p-sum">
-        Weight, waist, steps, training and macros — built because every calorie calculator asks you
-        to self-select an activity level from a dropdown, which is a guess people get wrong in a
-        consistent direction.
-      </span>
+      <img class="thumb" src="img/thumb-weight.png" alt="">
+      <div>
+        <div class="p-top"><span class="p-name">Weight Tracking App</span></div>
+        <div class="p-sum">Tracks weight, activity and nutrition, and sets daily calorie and protein targets from what I actually do.</div>
+        <div class="p-meta">TypeScript · React · Supabase</div>
+      </div>
+      <span class="chev">▸</span>
     </summary>
     <div class="p-body">
-      <ul class="hard">
-        <li><b>Apple Health has no web API.</b> Without shipping a native app, the only route is a
-          Shortcuts automation posting the day's step count to an endpoint. It authenticates with a
-          scoped key whose entire blast radius is one step count for one user — deliberately not a
-          long-lived user token, which would grant read and write over everything.</li>
-        <li><b>The energy model is decomposed, not declared.</b> Basal metabolism, plus walking
-          measured from real steps, plus training from a stated weekly frequency — kept apart so
-          walking is never counted twice, which is exactly what a single lifestyle multiplier on
-          top of measured steps does.</li>
-        <li><b>Calibrated against a published equation</b> rather than a fitted constant, after the
-          first version quietly told me a stated 1 kg/week goal would deliver 0.42. The floor
-          causing it is now shown on screen instead of silently clamping.</li>
-        <li><b>Every date is an Israel-local day.</b> Storing a date-only value as a UTC instant
-          had already put 1,750 rows a day early in the other app, so here the local-day
-          derivation lives in one module and nothing else may compute a day.</li>
+      <p>
+        Losing weight well depends on knowing how much to eat, and most calorie calculators get
+        that number wrong by asking you to guess your activity level from a dropdown. This app
+        works it out from real data instead. It logs my weight and waist over time, syncs my daily
+        steps from Apple Health automatically, and records strength-training sessions — then
+        combines all of it with my profile to set calorie and protein targets that follow how
+        active I actually was.
+      </p>
+      <p>
+        It also says so when a goal is too aggressive to be healthy, rather than quietly changing
+        it, and turns the history into trends and short notes that make progress easy to see and
+        easier to keep up.
+      </p>
+      <ul class="feat">
+        <li>Weight and waist logging, including filling in past dates</li>
+        <li>Steps synced every night from Apple Health</li>
+        <li>Calorie and protein targets based on measured activity and training</li>
+        <li>Trends and progress notes over time</li>
       </ul>
-      <div class="note">
-        No demo account on this one — it holds one real person's body data, so there is nothing to
-        hand out. Happy to walk through it live.
+      <p class="mob">Designed for the phone — best opened on mobile. On a desktop it shows as a narrow column.</p>
+      <div class="p-links">
+        <a class="primary" href="https://weight-khaki.vercel.app/" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2.5h4.5V7M13.5 2.5 7 9M12 10v3a.5.5 0 0 1-.5.5h-8A.5.5 0 0 1 3 13V5a.5.5 0 0 1 .5-.5h3"/></svg>Open the app</a>
+        <a href="https://www.linkedin.com/in/matan-millionshik-0704761a9/" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true" fill="currentColor"><path d="M13.6 0H2.4A2.4 2.4 0 0 0 0 2.4v11.2A2.4 2.4 0 0 0 2.4 16h11.2a2.4 2.4 0 0 0 2.4-2.4V2.4A2.4 2.4 0 0 0 13.6 0ZM5 13H2.8V6H5v7ZM3.9 4.8a1.3 1.3 0 1 1 0-2.6 1.3 1.3 0 0 1 0 2.6ZM13.2 13H11V9.3c0-.9-.3-1.5-1.1-1.5-.7 0-1 .5-1.2.9-.1.2-.1.4-.1.7V13H6.4s.03-6.1 0-7h2.2v1c.3-.5.8-1.2 2-1.2 1.5 0 2.6 1 2.6 3.1V13Z"/></svg>Message me for a walkthrough</a>
       </div>
     </div>
   </details>
 
-  <!-- PROJECT: Article / Signal Processing Cup -->
+  <!-- PROJECT: Synthetic speech attribution -->
   <details class="proj">
     <summary>
-      <span class="p-name"><span class="chev">▸</span> Synthetic speech attribution
-        <span class="tag res">Published</span></span>
-      <span class="p-meta">2022 · IEEE Signal Processing Cup</span>
-      <span class="p-sum">
-        Given a recording, identify which synthetic speech generator produced it — attribution
-        rather than detection. 92.2% accuracy on clean samples, 78.4% on noisy ones. Team SIPL,
-        Technion.
-      </span>
+      <img class="thumb" src="img/speech-attribution.png" alt="">
+      <div>
+        <div class="p-top"><span class="p-name">Synthetic Speech Attribution</span></div>
+        <div class="p-sum">Identifying which system generated a synthetic voice — our entry to the 2022 IEEE Signal Processing Cup.</div>
+        <div class="p-meta">Machine Learning · Python</div>
+      </div>
+      <span class="chev">▸</span>
     </summary>
     <div class="p-body">
       <p>
-        Detection asks whether a voice is fake. Attribution asks <strong>which system made
-        it</strong>, which is the harder and more useful question — it is what lets you trace a
-        clip back to a tool. Our entry combined signal-processing features with deep networks in an
-        ensemble, and leaned on augmentation for robustness, which is where most of the noisy-set
-        performance came from.
+        As synthetic speech becomes harder to tell apart from a real voice, knowing that a
+        recording is fake matters less than knowing <strong>which system produced it</strong>. For
+        the 2022 IEEE Signal Processing Cup, our team of four at the Technion's Signal and Image
+        Processing Lab built a system that does exactly that. It extracts several families of
+        acoustic features — cepstral coefficients, phase-based group delay and wav2vec 2.0
+        embeddings — classifies them with an ensemble of SVMs and CNN–BiLSTM networks, and flags
+        recordings from synthesisers it has never seen before.
       </p>
-      <a class="go" href="https://zenodo.org/records/7428696">Read the report →</a>
+      <p>
+        It reached <strong>92.2%</strong> accuracy on clean audio and <strong>78.4%</strong> on
+        audio degraded by noise, reverberation and compression.
+      </p>
+      <div class="p-links">
+        <a href="https://doi.org/10.5281/zenodo.7428696" target="_blank" rel="noopener">Read the paper</a>
+        <a href="https://signalprocessingsociety.org/community-involvement/signal-processing-cup" target="_blank" rel="noopener">About the SP Cup</a>
+      </div>
     </div>
   </details>
 
-  <!-- PROJECT: Pusimusi -->
+  <!-- PROJECT: Travel App for Thailand -->
   <details class="proj">
     <summary>
-      <span class="p-name"><span class="chev">▸</span> Pusimusi <span class="tag ship">Built</span></span>
-      <span class="p-meta">2026 · Thailand · React, Supabase</span>
-      <span class="p-sum">
-        A trip companion I built for my girlfriend before we travelled to Thailand — one place for
-        everywhere we wanted to go and everything we had booked, instead of six apps and a
-        screenshot folder.
-      </span>
+      <img class="thumb" src="img/thumb-travel.jpg" alt="">
+      <div>
+        <div class="p-top"><span class="p-name">Travel App for Thailand</span></div>
+        <div class="p-sum">A travel companion I built as a gift for my girlfriend, before our trip to Thailand.</div>
+        <div class="p-meta">React · Supabase</div>
+      </div>
+      <span class="chev">▸</span>
     </summary>
     <div class="p-body">
       <p>
-        Planning a trip leaves your information scattered: places saved in Google Maps, bookings
-        buried in email, documents in a photo album, and a list of recommendations in a chat
-        thread. Pusimusi pulls those into <strong>one shared hub</strong> for two people.
+        Before our trip to Thailand, I built my girlfriend an app that held the whole trip in one
+        place — as a gift. Planning a trip usually ends up scattered across map pins, booking
+        emails, photographed documents and chat messages; this brought all of it together for the
+        two of us, with a few touches made just for her.
       </p>
-      <ul class="hard">
-        <li><b>Places, synced with what we already used.</b> Saved spots and our own lists connect
-          through Google Maps rather than asking us to re-enter everything — the app has to fit
-          the tools you already reach for, or you stop opening it on day three.</li>
-        <li><b>Where we were, and where we were going.</b> Location tracking across the trip, so
-          the itinerary reflected what actually happened rather than what we planned in advance.</li>
-        <li><b>Every reservation and document in one place.</b> Flights, hotels, transfers and
-          paperwork, reachable without digging through an inbox on hotel wifi.</li>
-        <li><b>A few things built only for her.</b> The point of building something for one person
-          is that you get to include the parts that would never survive a product review.</li>
+      <ul class="feat">
+        <li>Our saved places, synced with Google Maps and our own lists</li>
+        <li>Location tracking throughout the trip</li>
+        <li>Every reservation and travel document in one place</li>
+        <li>A few features made just for her</li>
       </ul>
-      <div class="note">
-        <b>Currently paused.</b> Supabase's free tier runs two active projects at a time, and
-        Wallet and Weight hold those slots. The data and schema are intact — it comes back whenever
-        the trip does.
+      <p class="paused">
+        Currently paused: Supabase's free tier runs two active projects at a time, and the two apps
+        above hold those slots. The data and design are intact.
+      </p>
+      <p class="mob">Designed for the phone — best opened on mobile. On a desktop it shows as a narrow column.</p>
+      <div class="p-links">
+        <a class="primary" href="https://www.pussimusi.life/" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2.5h4.5V7M13.5 2.5 7 9M12 10v3a.5.5 0 0 1-.5.5h-8A.5.5 0 0 1 3 13V5a.5.5 0 0 1 .5-.5h3"/></svg>Open the app</a>
       </div>
     </div>
   </details>
 
-  <!-- PROJECT: Vision transformers -->
+  <!-- PROJECT: Efficient Vision Transformers -->
   <details class="proj">
     <summary>
-      <span class="p-name"><span class="chev">▸</span> Efficient Vision Transformers
-        <span class="tag res">Research</span></span>
-      <span class="p-meta">Technion · PyTorch, Hugging Face</span>
-      <span class="p-sum">
-        How much of a Vision Transformer's cost can be removed before the accuracy goes with it —
-        post-training quantisation and inference-time reduction, measured on ImageNet-1k.
-      </span>
+      <img class="thumb" src="img/vit.svg" alt="">
+      <div>
+        <div class="p-top"><span class="p-name">Efficient Vision Transformers</span></div>
+        <div class="p-sum">Cutting what a Vision Transformer costs to run, while keeping its accuracy.</div>
+        <div class="p-meta">Machine Learning · Python · PyTorch · Hugging Face</div>
+      </div>
+      <span class="chev">▸</span>
     </summary>
     <div class="p-body">
       <p>
-        Two strands: quantising the PyTorch ViT, and cutting inference time on the Hugging Face
-        model. Both measured against a hand-prepared ImageNet-1k validation set, because label
-        ordering differs between the official dictionary and the one ViT's authors used — get that
-        wrong and the accuracy you measure is meaningless.
+        Vision Transformers are among the most accurate image models, but they are expensive to
+        run, which limits where they can be used. This project measured how far that cost can be
+        reduced — through post-training quantisation of the PyTorch model, and inference-time
+        optimisation of the Hugging Face model. Both were evaluated on an ImageNet-1k validation
+        set we prepared and published, with its labels realigned to the ordering the model was
+        trained on: a step that is easy to miss, and without which any accuracy figure is
+        meaningless.
       </p>
-      <a class="go" href="https://github.com/matanmill304/Efficient-use-of-visual-transformers">Notebooks →</a>
+      <div class="p-links">
+        <a href="https://github.com/matanmill304/Efficient-use-of-visual-transformers" target="_blank" rel="noopener">Code</a>
+        <a href="https://www.kaggle.com/datasets/matanmillionshik/imagenet-val" target="_blank" rel="noopener">Dataset on Kaggle</a>
+      </div>
     </div>
   </details>
 
-  <!-- PROJECT: Project B -->
+  <!-- PROJECT: Sound event recognition -->
   <details class="proj">
     <summary>
-      <span class="p-name"><span class="chev">▸</span> Hierarchical audio classification
-        <span class="tag res">Research</span></span>
-      <span class="p-meta">Technion · Project B · Python</span>
-      <span class="p-sum">
-        A full audio classification pipeline — dataset preparation and resampling, a label
-        hierarchy, two architecture iterations and a results-analysis stage.
-      </span>
+      <img class="thumb" src="img/audio-events.svg" alt="">
+      <div>
+        <div class="p-top"><span class="p-name">Sound Event Recognition with Transformers</span></div>
+        <div class="p-sum">A Transformer model that recognises which sounds are present in an audio clip, trained on FSD50K.</div>
+        <div class="p-meta">Machine Learning · Python · PyTorch</div>
+      </div>
+      <span class="chev">▸</span>
     </summary>
     <div class="p-body">
       <p>
-        Includes a separate preparation path for the music-excluded condition, so the two
-        conditions are comparable rather than sharing a dataset that only suits one of them.
+        A single audio clip often contains several sounds at once — speech over traffic, a dog
+        behind music — so recognising them is a multi-label problem, not a choice of one class.
+        This project built a full pipeline for it on <strong>FSD50K</strong>, a large public
+        dataset of labelled everyday sounds: audio preparation and resampling, a Transformer
+        encoder model, training, and evaluation by mean average precision. A separate condition
+        excludes music, to measure how the model does on the environmental sounds that music
+        tends to drown out.
       </p>
-      <a class="go" href="https://github.com/matanmill304/ProjectB">Source →</a>
+      <div class="p-links">
+        <a href="https://github.com/matanmill304/ProjectB" target="_blank" rel="noopener">Code</a>
+      </div>
     </div>
   </details>
 </section>

@@ -1,92 +1,118 @@
 # Editing this site
 
-One file: `index.html`. No build step, no Jekyll, no dependencies. Edit it, commit, push — it is
-live in about a minute.
+One file: `index.html`. No build step, no dependencies. Edit it, then publish:
 
 ```bash
-cd ~/stuff/matanmill304.github.io
-# edit index.html
-git add -A && git commit -m "what you changed" && git push
+cd ~/stuff/matanmill304.github.io && git add -A && git commit -m "what you changed" && git push
 ```
 
-To see it before pushing, open the file in a browser, or:
+Live in a minute or two (occasionally up to five — GitHub Pages is not always quick).
+
+**To see changes as you type**, ask Claude to start the `github-page` preview: it reloads on every
+save. Or run a plain server and refresh by hand:
 
 ```bash
 cd ~/stuff/matanmill304.github.io && python3 -m http.server 4321
 ```
 
-then go to http://localhost:4321 — reload after each save.
+**Or edit on GitHub directly:** open `index.html` on github.com, press the pencil, edit, and
+"Commit changes". Pick one way and stick to it — editing both places at once makes them conflict.
 
 ---
 
-## 1. Changing project text
+## 1. The header
 
-Every project is one block that looks like this. Search `index.html` for
-`<!-- PROJECT:` to jump between them.
+Near the top of `<body>`:
 
 ```html
-<!-- PROJECT: Wallet -->
-<details class="proj" open>
+<h1>Matan Millionschik</h1>
+<p class="role">Founder, Engineer and Product Manager.</p>
+<p class="bio">I work on things that help me and the people around me. …</p>
+<p class="where">Tel Aviv · Israel</p>
+```
+
+Change the text between the tags. The name also appears in `<title>` and in the two `meta`
+descriptions at the top of the file — those are what Google and link previews show, so update them
+too if you change the name or the line about what you do.
+
+## 2. A project
+
+Every project is one block. Search the file for `PROJECT:` to jump between them.
+
+```html
+<!-- PROJECT: Personal Finance Agent -->
+<details class="proj">
   <summary>
-    <span class="p-name"><span class="chev">▸</span> Wallet <span class="tag ship">Shipped</span></span>
-    <span class="p-meta">2026 — · React, TypeScript, Supabase</span>
-    <span class="p-sum">The short line people read before clicking.</span>
+    <img class="thumb" src="img/thumb-finance.png" alt="">
+    <div>
+      <div class="p-top"><span class="p-name">Personal Finance Agent</span></div>
+      <div class="p-sum">The one line people read before opening it.</div>
+      <div class="p-meta">AI · TypeScript · React · Supabase</div>
+    </div>
+    <span class="chev">▸</span>
   </summary>
   <div class="p-body">
-    <p>The long explanation, only visible once opened.</p>
+    <p>The full description, shown after clicking.</p>
+    <ul class="feat"><li>A feature</li></ul>
+    <p class="mob">Designed for the phone — best opened on mobile. …</p>
+    <div class="p-links">
+      <a class="primary" href="https://…" target="_blank" rel="noopener">Open the app</a>
+      <a href="https://…" target="_blank" rel="noopener">Another link</a>
+    </div>
   </div>
 </details>
 ```
 
 | Part | What it is |
 |---|---|
-| `p-name` | The project title. Leave the `chev` span alone — it is the ▸ that rotates. |
-| `tag` | The small label. `ship` = teal, `res` = blue. Change the word inside freely. |
-| `p-meta` | Right-hand line: year, stack, venue. Keep it short, it is one line. |
-| `p-sum` | **The summary.** Two or three lines maximum — this is what gets scanned. |
+| `thumb` | The picture on the left. See §4. |
+| `p-name` | The title. |
+| `p-sum` | **The summary** — one or two lines. It is all people see until they click. |
+| `p-meta` | Topic and tools, separated by ` · `. Topics (AI, Machine Learning) go first. |
+| `chev` | The ▸ that rotates when the project opens. Leave it alone. |
 | `p-body` | Everything shown after clicking. |
 
-## 2. Reordering projects
+Inside `p-body` you can use:
 
-The order on the page is simply the order of the `<details>` blocks in the file. Cut one block
-(from `<!-- PROJECT:` to its closing `</details>`) and paste it where you want it.
+| Markup | Gives you |
+|---|---|
+| `<p>…</p>` | a paragraph. `<strong>…</strong>` inside it darkens a phrase. |
+| `<ul class="feat"><li>…</li></ul>` | the short dashed feature list |
+| `<p class="mob">…</p>` | the small note with the phone icon |
+| `<p class="paused">…</p>` | a small grey note, no icon |
+| `<div class="p-links">…</div>` | the row of pill buttons. Add `class="primary"` to the main one. |
 
-`open` on the first block makes it start expanded. Move that word to a different block, or delete
-it so everything starts closed.
+Everything starts closed. Adding `open` — `<details class="proj" open>` — makes one start
+expanded.
 
-## 3. Inside the long explanation
+## 3. Reordering projects
 
-Only four things are used, so it stays easy to keep consistent:
+The order on the page is the order of the blocks in the file. Cut a whole block, from its
+`<!-- PROJECT:` line to its closing `</details>`, and paste it where you want it.
 
-```html
-<p>A paragraph. <strong>Bold</strong> for a phrase worth catching the eye.</p>
+## 4. Thumbnails
 
-<ul class="hard">                        <!-- the dashed list -->
-  <li><b>Lead-in.</b> Then the explanation.</li>
-</ul>
+In `img/`, all shaped 16:10 (wide), and shown 152px across:
 
-<div class="figs">                       <!-- the row of numbers -->
-  <div class="fig"><span class="n">~1,770</span><span class="k">transactions</span></div>
-</div>
+| File | Project |
+|---|---|
+| `thumb-finance.png` | Personal Finance Agent |
+| `thumb-weight.png` | Weight Tracking App |
+| `speech-attribution.png` | Synthetic Speech Attribution — Fig. 1 from the paper |
+| `thumb-travel.jpg` | Travel App for Thailand |
+| `vit.svg`, `audio-events.svg` | the two research projects (drawn illustrations) |
 
-<div class="note">A boxed aside.</div>
+To replace one, save a new image in `img/` and change the `src` in both places it appears in that
+project. Anything at least 320px wide and roughly 16:10 works; other shapes get cropped to fit.
+Square app icons look best centred on a background of their own colour rather than cropped — ask
+Claude to do that, as was done for the finance and weight icons.
 
-<a class="go" href="https://...">Link text →</a>
-```
-
-`<code>3.5907</code>` gives you the monospace treatment for a figure or a filename.
-
-**Pusimusi still needs its real description** — it currently says so out loud on the page. Replace
-the `p-sum` and the `p-body` paragraph and it is done.
-
-## 4. Changing the font
+## 5. Changing the font
 
 Two places, and they must agree:
 
 1. The `<link>` in `<head>` marked `FONT —`.
 2. `--sans` in the `:root` block.
-
-Alternatives that need no other change — swap the family name in both places:
 
 | Font | Reads as |
 |---|---|
@@ -94,36 +120,36 @@ Alternatives that need no other change — swap the family name in both places:
 | `Schibsted Grotesk` | a touch warmer, rounder |
 | `Plus Jakarta Sans` | friendlier, wider |
 | `Geist` | flatter and more technical |
-| `Newsreader` | a serif — bookish, what this page had first |
 
-`--mono` (IBM Plex Mono) is used for labels, years and figures. Leave it unless you want the
-technical parts to feel different too.
+`--mono` (IBM Plex Mono) is used for PROJECTS, the location, the tech line and the buttons.
 
-## 5. Colours
+## 6. Colours
 
-All in `:root`, and each has a dark-mode counterpart in the
-`@media (prefers-color-scheme:dark)` block below it. **Change both** or dark mode will drift.
+All in `:root`, each with a dark-mode twin in the `@media (prefers-color-scheme:dark)` block just
+below it. **Change both**, or dark mode drifts.
 
 | Token | Used for |
 |---|---|
-| `--paper` / `--surface` | page background / cards and chips |
-| `--ink` / `--ink-2` / `--ink-3` | headings / body / quiet meta text |
-| `--rule` / `--rule-2` | borders / the fainter dividers between projects |
-| `--ship` | the teal accent: links, hover, the Shipped tag |
-| `--research` | the blue accent for research tags |
+| `--paper` / `--surface` | page background / thumbnails, buttons |
+| `--ink` / `--ink-2` / `--ink-3` | headings / body text / quiet text like the tech line |
+| `--rule` / `--rule-2` | borders / the faint lines between projects |
+| `--ship` | the teal accent: hover colour, and the "Open the app" button |
 
-## 6. Your photo and the favicon
+## 7. Your photo and the tab icon
 
-- `me.jpg` — the round photo at the top. If the file is missing the photo just disappears and the
-  layout closes up, so the page is never broken by it.
-- `favicon.svg` and `apple-touch-icon.png` — the browser tab icon and the icon if someone saves
-  the page to a phone home screen.
+- `me.jpg` — the round photo. If it is missing, the photo simply disappears and the layout closes
+  up, so the page never breaks. Replace it with a new square `me.jpg` and push.
+- `favicon-32.png`, `favicon-16.png`, `apple-touch-icon.png` — the browser tab icon, and the icon
+  if someone saves the page to a phone home screen.
 
-To replace the photo: drop a new `me.jpg` in this folder and push. Square images work best; it is
-cropped to a circle.
+## 8. Contact buttons
 
-## 7. Contact details
+The `<ul class="links">` block in the header. The email address is assembled by the small script
+at the bottom of the file, so scrapers have to work for it — to change it, edit `var u` and
+`var d` in that script, not the visible text.
 
-In the `<ul class="links">` block near the top. The email is assembled by the small script at the
-bottom of the file rather than written in the HTML, so scrapers have to work for it — if you change
-the address, change it in the script (`var u` and `var d`), not in the visible text.
+## One thing to avoid
+
+**Do not put `-->` inside an HTML comment.** Comments cannot contain it: it ends the comment early
+and spills the rest of the comment onto the page as visible text. This has happened on this site
+once already.
