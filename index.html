@@ -344,6 +344,45 @@ footer p{font-family:var(--mono);font-size:12px;color:var(--ink-3);margin:0}
     </div>
   </details>
 
+  <!-- PROJECT: Knesset MCP -->
+  <details class="proj">
+    <summary>
+      <img class="thumb" src="img/knesset-mcp.svg" alt="">
+      <div>
+        <div class="p-top"><span class="p-name">Knesset MCP Server</span></div>
+        <div class="p-sum">Lets an AI assistant query Israel's parliament directly — bills, votes, committees, and how each member voted.</div>
+        <div class="p-meta">AI · Python</div>
+      </div>
+      <span class="chev">▸</span>
+    </summary>
+    <div class="p-body">
+      <p>
+        The Knesset publishes almost everything it does through an open API: every bill and its
+        status, committee sessions, plenum votes, and how each individual member voted. In practice
+        it is out of reach — the data is Hebrew-only and available only as OData queries across
+        dozens of linked tables, so answering even a simple question takes several joins.
+      </p>
+      <p>
+        This is an <strong>MCP server</strong> that hands that API to an AI assistant as a set of
+        tools, so a question asked in plain language becomes a real query against the live data.
+        Seven shortcut tools cover the questions people actually ask — who a member is, everything
+        about one bill, how one person voted across a term — each doing the joins that would
+        otherwise take several calls. Four more expose every table for anything else.
+      </p>
+      <ul class="feat">
+        <li>Queries the live API directly — no API key, no database, nothing to keep in sync</li>
+        <li>Full coverage: every table, including per-member plenum votes</li>
+        <li>Handles the API's quirks, including a firewall that rejects some valid OData</li>
+        <li>Runs locally over stdio, or as an HTTP service for remote clients</li>
+        <li>Open source, MIT licensed</li>
+      </ul>
+      <div class="p-links">
+        <a class="primary" href="https://github.com/matanmill304/knesset-mcp" target="_blank" rel="noopener">Code on GitHub</a>
+        <a href="https://knesset.gov.il/OdataV4/ParliamentInfo/" target="_blank" rel="noopener">The data source</a>
+      </div>
+    </div>
+  </details>
+
   <!-- PROJECT: Efficient Vision Transformers -->
   <details class="proj">
     <summary>
