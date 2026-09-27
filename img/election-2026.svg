@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400">
+  <rect width="640" height="400" fill="#E6E3DC"/>
+  <!-- three identical ballot slips; the middle one is stamped -->
+  <g transform="translate(118 98) rotate(-5)">
+    <rect width="120" height="170" rx="4" fill="#FBF9F4" stroke="#CFCAC0" stroke-width="2"/>
+    <rect x="24" y="44" width="72" height="30" rx="3" fill="#2F2D2A"/>
+    <rect x="30" y="98" width="60" height="7" rx="3.5" fill="#2F2D2A" opacity=".3"/>
+    <rect x="38" y="114" width="44" height="7" rx="3.5" fill="#2F2D2A" opacity=".2"/>
+  </g>
+  <g transform="translate(260 86)">
+    <rect width="120" height="170" rx="4" fill="#FBF9F4" stroke="#CFCAC0" stroke-width="2"/>
+    <rect x="24" y="44" width="72" height="30" rx="3" fill="#2F2D2A"/>
+    <rect x="30" y="98" width="60" height="7" rx="3.5" fill="#2F2D2A" opacity=".3"/>
+    <rect x="38" y="114" width="44" height="7" rx="3.5" fill="#2F2D2A" opacity=".2"/>
+    <g transform="translate(86 132) rotate(-14)" opacity=".92">
+      <circle r="34" fill="none" stroke="#5A46B6" stroke-width="5"/>
+      <circle r="25" fill="none" stroke="#5A46B6" stroke-width="2"/>
+      <path d="M-12 1 -3 10 14 -9" fill="none" stroke="#5A46B6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+  <g transform="translate(402 98) rotate(5)">
+    <rect width="120" height="170" rx="4" fill="#FBF9F4" stroke="#CFCAC0" stroke-width="2"/>
+    <rect x="24" y="44" width="72" height="30" rx="3" fill="#2F2D2A"/>
+    <rect x="30" y="98" width="60" height="7" rx="3.5" fill="#2F2D2A" opacity=".3"/>
+    <rect x="38" y="114" width="44" height="7" rx="3.5" fill="#2F2D2A" opacity=".2"/>
+  </g>
+  <rect x="236" y="310" width="168" height="10" rx="5" fill="#2F2D2A" opacity=".25"/>
+</svg>

@@ -100,6 +100,7 @@ In `img/`, all shaped 16:10 (wide), and shown 152px across:
 | `thumb-weight.png` | Weight Tracking App |
 | `speech-attribution.png` | Synthetic Speech Attribution — Fig. 1 from the paper |
 | `thumb-travel.jpg` | Travel App for Thailand |
+| `election-2026.svg` | Who Should I Vote For? (drawn illustration) |
 | `vit.svg`, `audio-events.svg` | the two research projects (drawn illustrations) |
 
 To replace one, save a new image in `img/` and change the `src` in both places it appears in that
